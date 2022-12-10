@@ -6,35 +6,51 @@ const getBatchinfo=require('../util/helper')
 const _=require('underscore')
 const lodashing=require("lodash.frompairs")
 
-router.get('/test-me', function (req, res) {
-    
+/*
+router.get('/movies/:indexNumber', function (req, res) {
+  let movi=["sai","ram","baba","rolex"]
+  
+  
+  //for(let i=0;i<=movi.length-1;i++){
+    console.log(movi[req.params.indexNumber])
+  //}
+  res.send("Hlo buddy")
+  
 
-      const arr=['jan','feb','march','april','may','june','july','aug','sep','oct','nov','dec']
-      let result=_.chunk(arr,4);
-      console.log(result)
+});
+*/
 
-      const arrayNum=[1,3,5,7,9,11,13,15,17,19];
-      console.log(_.tail(arrayNum))
+router.get('/films/:filmid', function (req,res) {
+  const filmid=req.params.filmid
+  let list=[ {
+ id: 1,
+ "name": "The Shining"
+}, {
+ id: 2,
+ "name": "Incendies"
+}, {
+ id: 3,
+ "name": "Rang de Basanti"
+}, {
+ id: 4,
+ "name": "Finding Nemo"
+}]
 
-      const values=[1,2,3,6]
-      const value1=[2,4,6,9]
-      const value2=[3,7,5,1]
-      const value3=[8,9,4,5]
-      const value4=[9,5,6,2]
-      console.log(_.union(values,value1,value2,value3,value4));
-      
-      const filmy=[["horror","The Shining"],["drama","titanic"],["Thriller","Shutter Island"],["Fantasy","Pans Labyrinth"]]
-      console.log(lodashing(filmy))
-      console.log(newnam.trim);
-      console.log(newnam.trim.toUpperCase());
-      console.log(newnam.trim.toLowerCase());
-      console.log(getBatchinfo.date);
-      console.log(getBatchinfo.currentMonth);  //(Month is 0-based, so 11 means 12th Month)
-    console.log(`Welcome to my application. I am ${welcome.myName}  and a part of FunctionUp Californium cohort.`)
-    console.log(`${getBatchinfo.batchName},${getBatchinfo.week}${getBatchinfo.day},the topic for today nodejs module System`)
-   res.send('My first ever api!')
+//for(let r=0;r<obj.length+1;r++){
+//console.log(obj[req.params.obj]
+if(list[filmid] !== undefined){
+  res.send(list[filmid])
+}else{ res.send("Error: pleasee enter a valid index")}
+  
+
+//console.log(req.params)
+//console.log(req.params.obj)
+ 
+
 });
 
+
+      
 module.exports = router;
 
 //- welcome() -> prints ‘Welcome to my application. I am <name> and a part of FunctionUp Californium cohort.’ 
