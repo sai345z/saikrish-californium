@@ -37,7 +37,7 @@ router.get('/films/:filmid', function (req,res) {
 }]
 
 //for(let r=0;r<obj.length+1;r++){
-//console.log(obj[req.params.obj]
+//console.log(obj[req.params.obj])
 if(list[filmid] !== undefined){
   res.send(list[filmid])
 }else{ res.send("Error: pleasee enter a valid index")}
