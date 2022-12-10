@@ -1,12 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const welcome=require('../logger/logger')
-const newnam=require('../validator/formatter')
-const getBatchinfo=require('../util/helper')
+
 const _=require('underscore')
 const lodashing=require("lodash.frompairs")
 
-/*
+
 router.get('/movies/:indexNumber', function (req, res) {
   let movi=["sai","ram","baba","rolex"]
   
@@ -18,7 +16,7 @@ router.get('/movies/:indexNumber', function (req, res) {
   
 
 });
-*/
+
 
 router.get('/films/:filmid', function (req,res) {
   const filmid=req.params.filmid
@@ -36,8 +34,7 @@ router.get('/films/:filmid', function (req,res) {
  "name": "Finding Nemo"
 }]
 
-//for(let r=0;r<obj.length+1;r++){
-//console.log(obj[req.params.obj])
+
 if(list[filmid] !== undefined){
   res.send(list[filmid])
   console.log(list[filmid])
