@@ -3,7 +3,7 @@ const router = express.Router();
 
 const _=require('underscore')
 const lodashing=require("lodash.frompairs")
-/*
+
 router.get('/movies', function (req, res) {
   let movies=["RRR","Mirchi","Valayam","Simha"]
   console.log(movies)
@@ -35,7 +35,7 @@ router.get('/films', function (req,res) {
 console.log(list)
 res.send(list)
 });
-*/
+
 router.get('/films/:filmid', function (req,res) {
   const filmid=req.params.filmid
   let list=[ {
