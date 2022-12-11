@@ -20,7 +20,7 @@ router.get('/movies/:indexNumber', function (req, res) {
 });
 */
 
-router.get('/films/:filmid', function (req,res) {
+router.get('/Get/films/:filmid', function (req,res) {
   const filmid=req.params.filmid
   let list=[ {
  id: 1,
@@ -40,7 +40,11 @@ router.get('/films/:filmid', function (req,res) {
 //console.log(obj[req.params.obj])
 if(list[filmid] !== undefined){
   res.send(list[filmid])
-}else{ res.send("Error: pleasee enter a valid index")}
+  console.log(list[filmid])
+}else{ 
+  res.send("Error: pleasee enter a valid index")
+  console.log("Error: pleasee enter a valid index")
+}
   
 
 //console.log(req.params)
