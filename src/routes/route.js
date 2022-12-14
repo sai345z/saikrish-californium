@@ -1,10 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const welcome=require('../logger/logger')
-const newnam=require('../validator/formatter')
-const getBatchinfo=require('../util/helper')
 const _=require('underscore')
-const lodashing=require("lodash.frompairs")
+
 
 /*
 router.get('/movies/:indexNumber', function (req, res) {
@@ -20,38 +17,46 @@ router.get('/movies/:indexNumber', function (req, res) {
 });
 */
 
-router.get('/Get/films/:filmid', function (req,res) {
-  const filmid=req.params.filmid
-  let list=[ {
- id: 1,
- "name": "The Shining"
-}, {
- id: 2,
- "name": "Incendies"
-}, {
- id: 3,
- "name": "Rang de Basanti"
-}, {
- id: 4,
- "name": "Finding Nemo"
-}]
-
-//for(let r=0;r<obj.length+1;r++){
-//console.log(obj[req.params.obj])
-if(list[filmid] !== undefined){
-  res.send(list[filmid])
-  console.log(list[filmid])
-}else{ 
-  res.send("Error: pleasee enter a valid index")
-  console.log("Error: pleasee enter a valid index")
+let persons= [
+  {
+  name: "PK",
+  age: 10,
+  votingStatus: false
+},
+{
+  name: "SK",
+  age: 20,
+  votingStatus: false
+},
+{
+  name: "AA",
+  age: 70,
+  votingStatus: false
+},
+{
+  name: "SC",
+  age: 5,
+  votingStatus: false
+},
+{
+  name: "HO",
+  age: 40,
+  votingStatus: false
 }
-  
+]
 
-//console.log(req.params)
-//console.log(req.params.obj)
- 
+router.post('/age', function (req,res){
+  let newpersons=req.query;
+  let newOne=[];
+  for(let i=0;i<persons.length;i++){
+    if(persons[i].age===newpersons.age){
+      persons[i].votingStatus=true;
+      newOne.push(persons[i])
+      console.log(newOne)
+    }
+  }
 
-});
+})
 
 
       
