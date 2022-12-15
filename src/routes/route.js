@@ -47,16 +47,18 @@ let persons= [
 
 router.post('/age', function (req,res){
   let newpersons=req.query;
-  let newOne=[];
+  let playRac=[];
   for(let i=0;i<persons.length;i++){
-    if(persons[i].age===newpersons.age){
+    if(persons[i].age >= newpersons.votingage){
       persons[i].votingStatus=true;
-      newOne.push(persons[i])
-      console.log(newOne)
+      playRac.push(persons[i])
+      
+      
     }
   }
-
+   res.send( playRac)
 })
+
 
 
       
