@@ -6,7 +6,7 @@ const totalBooks=require('../../reaching/reaches')
 
 
 router.post ('/booksUpload', totalBooks.booksData);
-router.get('/listOfbooks',totalBooks.booksList);
+router.get('/totalbooks',totalBooks.Allbooks);
 
 
 

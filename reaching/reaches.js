@@ -6,10 +6,17 @@ const booksData= async function(req,res) {
     res.send({ sendingData })
 }
 
-const booksList=async function (req,res){
-    let allListofBooks=await booksone.find();
+const Allbooks=async function (req,res){
+    //let allListofBooks=await booksone.find();
+    //let allListofBooks=await booksone.find().select({BookName:1,authorName:1,_id:0})
+   // let allListofBooks=await booksone.find().select({BookName:1,year:1,_id:0})
+   //let allListofBooks=await booksone.find({authorName:"Saikrishna",year:2021})
+  // let allListofBooks=await booksone.find({
+    //$or:[{indianPrice:{$eq:"100"}},{indianPrice:{$eq:"200"}},{indianPrice:{$eq:"500"}}]});
+    //let allListofBooks=await booksone.find({Stockavailable:"Available",TotalPages:{$gte:500}});
+
     res.send({ allListofBooks})
 }
 
 module.exports.booksData=booksData;
-module.exports.booksList=booksList;
+module.exports.Allbooks=Allbooks;

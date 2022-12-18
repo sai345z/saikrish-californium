@@ -13,7 +13,7 @@ const booksSchema=new mongoose.Schema(
     BookModel:String,
     year: Number,
     TotalPages:Number,
-    Stockavailable:Boolean,
+    Stockavailable:String,
     Price:{
         indianPrice:String,
         EuropeanPrice:String

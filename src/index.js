@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/', route);
 
-mongoose.connect("mongodb+srv://yesone2:yestol78@yes23.c8ohgml.mongodb.net/test", {useNewUrlParser:true})
+mongoose.connect("mongodb+srv://drere34:dere43@clusterpi.uvl7fzl.mongodb.net/test", {useNewUrlParser:true})
 .then(()=> console.log('Mongoose data is good'))
 .catch(err=> console.log(err))
 
