@@ -1,11 +1,24 @@
 const mongoose=require('mongoose')
-
+// bookname, bookmodel,price(india,euroes),year,tagsarray,authorname,totalpages,stockavailable
 const booksSchema=new mongoose.Schema(
     {
-    BookName: String,
+    BookName:
+    { String,
+        type:String,
+        required:true
+        },
+    
     authorName: String,
-    Category: String,
-    year: Number
+    Tags:[String],
+    BookModel:String,
+    year: Number,
+    TotalPages:Number,
+    Stockavailable:Boolean,
+    Price:{
+        indianPrice:String,
+        EuropeanPrice:String
+    }
+
 },
     {timestamps:true}
 )
